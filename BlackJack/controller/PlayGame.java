@@ -18,18 +18,7 @@ public class PlayGame {
 
     int input = a_view.GetInput();
     
-    if (input == 'p')
-    {
-        a_game.NewGame();
-    }
-    else if (input == 'h')
-    {
-        a_game.Hit();
-    }
-    else if (input == 's')
-    {
-        a_game.Stand();
-    }
+
 
     return input != 'q';
   }
