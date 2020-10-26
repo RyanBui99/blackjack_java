@@ -3,7 +3,7 @@ package BlackJack.controller;
 import BlackJack.view.IView;
 import BlackJack.model.Game;
 
-public class PlayGame {
+public class PlayGame implements Observer{
 
   public boolean Play(Game a_game, IView a_view) {
     a_view.DisplayWelcomeMessage();
@@ -17,9 +17,14 @@ public class PlayGame {
     }
 
     int input = a_view.GetInput();
-    
+
 
 
     return input != 'q';
+  }
+
+  @Override
+  public void update() {
+
   }
 }
