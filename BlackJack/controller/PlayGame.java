@@ -16,11 +16,17 @@ public class PlayGame implements Observer{
         a_view.DisplayGameOver(a_game.IsDealerWinner());
     }
 
-    int input = a_view.GetInput();
+    IView.inputMenu input = a_view.GetInput();
 
+    if (input == IView.inputMenu.p) {
+      a_game.NewGame();
+    } else if (input == IView.inputMenu.h) {
+      a_game.Hit();
+    } else if (input == IView.inputMenu.s) {
+      a_game.Stand();
+    }
 
-
-    return input != 'q';
+    return input != IView.inputMenu.q;
   }
 
   @Override

@@ -10,17 +10,27 @@ public class SimpleView implements IView
           System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
         }
 
-        public int GetInput()
+        public InputMenu GetInput()
         {
           try {
             int c = System.in.read();
             while (c == '\r' || c =='\n') {
               c = System.in.read();
             }
-            return c;
+            if (c == 'p') {
+                return InputMenu.p;
+            } else if (c == 'h') {
+                return InputMenu.h;
+            } else if (c == 's') {
+                return InputMenu.s;
+            } else if (c == 'q') {
+                return InputMenu.q;
+            } else {
+                return InputMenu.invalid;
+            }
           } catch (java.io.IOException e) {
             System.out.println("" + e);
-            return 0;
+            return InputMenu.invalid;
           }
         }
 
