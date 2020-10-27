@@ -13,6 +13,7 @@ public class Dealer extends Player {
   
     m_newGameRule = a_rulesFactory.GetNewGameRule();
     m_hitRule = a_rulesFactory.GetHitRule();
+    winStrat = a_rulesFactory.getWinner();
     
     /*for(Card c : m_deck.GetCards()) {
       c.Show(true);
